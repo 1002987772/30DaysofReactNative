@@ -13,8 +13,9 @@ import React, {
 import autobind from 'autobind-decorator'
 
 const projects = [
-  require('./Project 01 - SimpleStopWatch'),
-  require('./Project 02 - CustomFont')
+  require('./Project01-SimpleStopWatch'),
+  require('./Project02-CustomFont'),
+  require('./Project03-PlayLocalVideo')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
   },
   titleBarText: {
     fontSize: 18,
-    fontWeight: "500",
+    fontWeight: '500',
     marginTop: 20,
     color: '#ffffff'
   },
