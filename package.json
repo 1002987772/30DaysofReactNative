@@ -8,6 +8,7 @@
   "dependencies": {
     "autobind-decorator": "^1.3.3",
     "react-native": "^0.21.0",
+    "react-native-blur": "^0.7.10",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
     "react-native-swiper": "^1.4.3",
     "react-native-vector-icons": "^1.2.1",

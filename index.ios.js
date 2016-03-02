@@ -16,7 +16,8 @@ const projects = [
   require('./Project01-SimpleStopWatch'),
   require('./Project02-CustomFont'),
   require('./Project03-PlayLocalVideo'),
-  require('./Project04-SnapChatMenu')
+  require('./Project04-SnapChatMenu'),
+  require('./Project05-CarouselEffect')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
