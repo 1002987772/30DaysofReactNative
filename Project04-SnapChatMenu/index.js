@@ -22,7 +22,6 @@ export default class SnapChatMenu extends React.Component {
   render () {
     return (
       <View style={styles.container}>
-        <GoBack {...this.props}/>
         <Swiper showsPagination={false} loop={false}>
           <View style={styles.slide1}>
             <Image style={styles.image} source={require('./images/left.png')}/>
@@ -45,6 +44,7 @@ export default class SnapChatMenu extends React.Component {
             <Image style={styles.image} source={require('./images/right.jpg')}/>
           </View>
         </Swiper>
+        <GoBack {...this.props}/>
       </View>
     )
   }
