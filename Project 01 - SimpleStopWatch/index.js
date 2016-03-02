@@ -44,16 +44,16 @@ export default class SimpleStopWatch extends React.Component {
           </View>
         </View>
         <View style={styles.control}>
-          <View style={styles.left}>
-            <TouchableHighlight onPress={this._onStart.bind(this)} underlayColor={'transparent'}>
-              <Icon size={60} name={'play'} color={'#ffffff'}/>
-            </TouchableHighlight>
-          </View>
-          <View style={styles.right}>
-            <TouchableHighlight onPress={this._onPause.bind(this)} underlayColor={'transparent'}>
-              <Icon size={60} name={'pause'} color={'#ffffff'}/>
-            </TouchableHighlight>
-          </View>
+          <TouchableHighlight onPress={this._onStart.bind(this)} underlayColor={'transparent'}>
+            <View style={styles.left}>
+                <Icon size={60} name={'play'} color={'#ffffff'}/>
+            </View>
+          </TouchableHighlight>
+          <TouchableHighlight onPress={this._onPause.bind(this)} underlayColor={'transparent'}>
+            <View style={styles.right}>
+                <Icon size={60} name={'pause'} color={'#ffffff'}/>
+            </View>
+          </TouchableHighlight>
         </View>
         <GoBack {...this.props}/>
       </View>
@@ -113,12 +113,14 @@ const styles = StyleSheet.create({
   },
   left: {
     width: 50 * vw,
+    height: 60 * vh,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#525BFC'
   },
   right: {
     width: 50 * vw,
+    height: 60 * vh,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#66BD09'

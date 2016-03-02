@@ -112,7 +112,8 @@ const styles = StyleSheet.create({
   },
   titleBarText: {
     fontSize: 18,
-    marginTop: 12,
+    fontWeight: "500",
+    marginTop: 20,
     color: '#ffffff'
   },
   row: {

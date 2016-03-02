@@ -51,11 +51,11 @@ export default class SimpleStopWatch extends React.Component {
           </Text>
         </View>
         <View style={styles.footer}>
-          <View style={styles.footerBtn}>
-            <TouchableHighlight onPress={this._onChangeFont.bind(this)} underlayColor='transparent'>
-              <Text style={styles.btnText}>Change Font</Text>
-            </TouchableHighlight>
-          </View>
+          <TouchableHighlight onPress={this._onChangeFont.bind(this)} underlayColor='transparent'>
+            <View style={styles.footerBtn}>
+                <Text style={styles.btnText}>Change Font</Text>
+            </View>
+          </TouchableHighlight>
         </View>
         <GoBack {...this.props}/>
       </View>
