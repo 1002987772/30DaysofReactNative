@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
   },
   reset: {
     position: 'absolute',
-    top: 43,
+    top: 38,
     right: 20
   },
   resetText: {
