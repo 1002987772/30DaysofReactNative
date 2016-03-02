@@ -1,6 +1,7 @@
 import React, {
   StyleSheet,
   Dimensions,
+  StatusBar,
   Image,
   View,
   TouchableOpacity
@@ -22,6 +23,7 @@ export default class SnapChatMenu extends React.Component {
   render () {
     return (
       <View style={styles.container}>
+        <StatusBar hidden={true}/>
         <Swiper showsPagination={false} loop={false}>
           <View style={styles.slide1}>
             <Image style={styles.image} source={require('./images/left.png')}/>
