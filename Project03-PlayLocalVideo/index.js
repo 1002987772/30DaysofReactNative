@@ -56,7 +56,7 @@ class VideoList extends React.Component {
     )
   }
 
-  _renderRow (rowData, rowID) {
+  _renderRow (rowData, sectionID, rowID) {
     return (
       <View key={rowID} style={styles.itemContainer}>
         <TouchableHighlight onPress={() => this._playVideo(rowData)}>

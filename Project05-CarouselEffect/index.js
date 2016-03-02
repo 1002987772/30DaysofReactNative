@@ -1,6 +1,6 @@
 import React, {
   StyleSheet,
-  // Dimensions,
+  Dimensions,
   ListView,
   Image,
   Text,
@@ -11,21 +11,21 @@ import GoBack from '../GoBack'
 import autobind from 'autobind-decorator'
 import { BlurView } from 'react-native-blur'
 
-// const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 export const title = '05 - CarouselEffect'
 export const description = '轮播图效果'
 
-const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 const imageList = [
   {image: require('./images/hello.jpg'), text: 'Hello there, i miss u.'},
   {image: require('./images/dudu.jpg'), text: '🐳🐳🐳🐳🐳'},
   {image: require('./images/bodyline.png'), text: 'Training like this, #bodyline'},
   {image: require('./images/wave.jpg'), text: 'I\'m hungry, indeed.'},
   {image: require('./images/darkvarder.png'), text: 'Dark Varder, #emoji'},
-  {image: require('./images/hhhhh.jpg'), text: 'I have no idea, bitch'},
-  {image: require('./images/wave.jpg'), text: '007'}
+  {image: require('./images/hhhhh.jpg'), text: 'I have no idea, bitch'}
 ]
+
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 @autobind
 export default class CarouselEffect extends React.Component {
@@ -53,9 +53,10 @@ export default class CarouselEffect extends React.Component {
     )
   }
 
-  _renderRow (rowData, rowID) {
+  _renderRow (rowData, sectionID, rowID) {
+    const isLast = Number(rowID) === imageList.length - 1
     return (
-      <View key={rowID} style={styles.imageItem}>
+      <View key={rowID} style={[styles.imageItem, (isLast ? styles.lastImage : {})]}>
         <Image source={rowData.image} style={styles.image} resizeMode='cover'>
           <BlurView style={styles.textContainer} blurType='xlight'>
             <Text style={styles.text}>{rowData.text}</Text>
@@ -75,6 +76,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   listContent: {
+    width,
     height: 450
   },
   imageItem: {
@@ -84,6 +86,9 @@ const styles = StyleSheet.create({
     height: 400,
     borderRadius: 7,
     overflow: 'hidden'
+  },
+  lastImage: {
+    marginRight: 20
   },
   image: {
     width: 300,
