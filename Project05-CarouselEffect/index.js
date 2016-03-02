@@ -18,13 +18,12 @@ export const description = '轮播图效果'
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 const imageList = [
-  {image: require('./images/bodyline.png'), text: '001'},
-  {image: require('./images/darkvarder.png'), text: '002'},
-  {image: require('./images/dudu.jpg'), text: '003'},
   {image: require('./images/hello.jpg'), text: 'Hello there, i miss u.'},
-  {image: require('./images/hhhhh.jpg'), text: '005'},
-  {image: require('./images/IMG_1517.png'), text: '006'},
-  {image: require('./images/wave.jpg'), text: '007'},
+  {image: require('./images/dudu.jpg'), text: '🐳🐳🐳🐳🐳'},
+  {image: require('./images/bodyline.png'), text: 'Training like this, #bodyline'},
+  {image: require('./images/wave.jpg'), text: 'I\'m hungry, indeed.'},
+  {image: require('./images/darkvarder.png'), text: 'Dark Varder, #emoji'},
+  {image: require('./images/hhhhh.jpg'), text: 'I have no idea, bitch'},
   {image: require('./images/wave.jpg'), text: '007'}
 ]
 
@@ -58,7 +57,7 @@ export default class CarouselEffect extends React.Component {
     return (
       <View key={rowID} style={styles.imageItem}>
         <Image source={rowData.image} style={styles.image} resizeMode='cover'>
-          <BlurView style={styles.textContainer} blurType='light'>
+          <BlurView style={styles.textContainer} blurType='xlight'>
             <Text style={styles.text}>{rowData.text}</Text>
           </BlurView>
         </Image>
