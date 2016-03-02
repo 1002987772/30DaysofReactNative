@@ -15,7 +15,8 @@ import autobind from 'autobind-decorator'
 const projects = [
   require('./Project01-SimpleStopWatch'),
   require('./Project02-CustomFont'),
-  require('./Project03-PlayLocalVideo')
+  require('./Project03-PlayLocalVideo'),
+  require('./Project04-SnapChatMenu')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
     fontSize: 13,
     color: '#888888',
     lineHeight: 20,
-    paddingLeft: 36
+    paddingLeft: 37
   }
 })
 
