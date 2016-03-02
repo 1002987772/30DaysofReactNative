@@ -16,14 +16,14 @@ const vh = height / 100
 export const title = '01 - SimpleStopWatch'
 export const description = '一个简单的定时器'
 export default class SimpleStopWatch extends React.Component {
-  constructor () {
-    super()
-
-    this.state = {
-      count: '0.0'
-    }
+  constructor (props) {
+    super(props)
     this.timerID = null
   }
+
+  state = {
+    count: '0.0'
+  };
 
   componentWillUnmount () {
     this._onPause()

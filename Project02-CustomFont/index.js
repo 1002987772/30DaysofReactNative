@@ -33,14 +33,10 @@ const text = `
 export const title = '02 - CustomFont'
 export const description = '自定义字体'
 export default class SimpleStopWatch extends React.Component {
-  constructor () {
-    super()
-
-    this.state = {
-      currentIndex: 0,
-      currentFontFamily: fontNames[0]
-    }
-  }
+  state = {
+    currentIndex: 0,
+    currentFontFamily: fontNames[0]
+  };
 
   render () {
     return (

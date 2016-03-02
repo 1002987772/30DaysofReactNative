@@ -37,16 +37,13 @@ export default class PlayLocalVideo extends React.Component {
   }
 }
 
+const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
+
 @autobind
 class VideoList extends React.Component {
-  constructor () {
-    super()
-
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
-    this.state = {
-      dataSource: ds.cloneWithRows(video)
-    }
-  }
+  state = {
+    dataSource: ds.cloneWithRows(video)
+  };
 
   render () {
     return (
