@@ -42,7 +42,7 @@ export default class PullToRefresh extends React.Component {
               style={styles.refresh}
               refreshing={this.state.isRefreshing}
               onRefresh={this._onRefresh}
-              tintColor='#ffffff'
+              tintColor='#eeeeee'
               title={'Last Update at ' + now}
               colors={['#ffffff', '#ffffff', '#ffffff']}
               progressBackgroundColor='#ffffff'

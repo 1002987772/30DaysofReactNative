@@ -1,6 +1,8 @@
 package com.threetydaysofreactnative;
 
 import com.facebook.react.ReactActivity;
+import com.zmxv.RNSound.RNSoundPackage;
+import com.BV.LinearGradient.LinearGradientPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
 import com.brentvatne.RCTVideo.ReactVideoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -38,6 +40,8 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+        new RNSoundPackage(),
+        new LinearGradientPackage(),
         new RCTCameraPackage(),
         new ReactVideoPackage(),
         new VectorIconsPackage()

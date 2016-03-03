@@ -19,7 +19,8 @@ const projects = [
   require('./Project04-SnapChatMenu'),
   require('./Project05-CarouselEffect'),
   require('./Project06-FindMyLocation'),
-  require('./Project07-PullToRefresh')
+  require('./Project07-PullToRefresh'),
+  require('./Project08-RandomGradientColorMusic')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
