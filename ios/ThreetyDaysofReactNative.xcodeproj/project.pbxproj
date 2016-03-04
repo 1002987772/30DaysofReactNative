@@ -34,6 +34,7 @@
 		88BC02D01C86957C00DB000C /* MFTongXin_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88BC02CD1C86957C00DB000C /* MFTongXin_Noncommercial-Regular.ttf */; };
 		88BC02D11C86957C00DB000C /* MFZhiHei_Noncommercial-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88BC02CE1C86957C00DB000C /* MFZhiHei_Noncommercial-Regular.ttf */; };
 		88BC02D61C869AE100DB000C /* emoji.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 88BC02D51C869AE100DB000C /* emoji.mp4 */; };
+		88E1BF871C89745500EA9A95 /* moments.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 88E1BF861C89745500EA9A95 /* moments.mp4 */; };
 		88ED2EA61C8872DD0014533B /* Ecstasy.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 88ED2EA51C8872DD0014533B /* Ecstasy.mp3 */; };
 		96DC9B105A274935A1EBD67E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 18590E8789764BDEA1270613 /* Ionicons.ttf */; };
 		97888AC63E524A7F9659C0BC /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0998B943C5D04259A65F1422 /* libRNVectorIcons.a */; };
@@ -206,6 +207,7 @@
 		88BC02CD1C86957C00DB000C /* MFTongXin_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MFTongXin_Noncommercial-Regular.ttf"; path = "../Project02-CustomFont/MFTongXin_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		88BC02CE1C86957C00DB000C /* MFZhiHei_Noncommercial-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "MFZhiHei_Noncommercial-Regular.ttf"; path = "../Project02-CustomFont/MFZhiHei_Noncommercial-Regular.ttf"; sourceTree = "<group>"; };
 		88BC02D51C869AE100DB000C /* emoji.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = emoji.mp4; path = "../Project03-PlayLocalVideo/emoji.mp4"; sourceTree = "<group>"; };
+		88E1BF861C89745500EA9A95 /* moments.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; name = moments.mp4; path = "../Project10-VideoBackground/moments.mp4"; sourceTree = "<group>"; };
 		88ED2EA51C8872DD0014533B /* Ecstasy.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Ecstasy.mp3; path = "../Project08-RandomGradientColorMusic/Ecstasy.mp3"; sourceTree = "<group>"; };
 		8CC8C8730CA245C1B75A6B66 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		96BDF4E615A04CFEAB07CBFE /* libRCTCamera.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 0; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRCTCamera.a; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				88BC02CE1C86957C00DB000C /* MFZhiHei_Noncommercial-Regular.ttf */,
 				88BC02D51C869AE100DB000C /* emoji.mp4 */,
 				88ED2EA51C8872DD0014533B /* Ecstasy.mp3 */,
+				88E1BF861C89745500EA9A95 /* moments.mp4 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -751,6 +754,7 @@
 				3FCD9A7715484881B8076362 /* MaterialIcons.ttf in Resources */,
 				7B55ECFF21C849C0A177C28B /* Octicons.ttf in Resources */,
 				88BC02D01C86957C00DB000C /* MFTongXin_Noncommercial-Regular.ttf in Resources */,
+				88E1BF871C89745500EA9A95 /* moments.mp4 in Resources */,
 				88ED2EA61C8872DD0014533B /* Ecstasy.mp3 in Resources */,
 				C16174F8C9FF4423AC633417 /* Zocial.ttf in Resources */,
 			);
