@@ -20,7 +20,8 @@ const projects = [
   require('./Project05-CarouselEffect'),
   require('./Project06-FindMyLocation'),
   require('./Project07-PullToRefresh'),
-  require('./Project08-RandomGradientColorMusic')
+  require('./Project08-RandomGradientColorMusic'),
+  require('./Project09-ImageScroller')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
