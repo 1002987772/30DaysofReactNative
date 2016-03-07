@@ -57,18 +57,18 @@ export default class AnimateTableViewCell extends React.Component {
     this.state.animTransiton.map((item, index) => {
       Animated.timing(item, {
         toValue: 0, // 目标值
-        duration: 700, // 动画时间
+        duration: 900, // 动画时间
         delay: index * 100,
-        easing: Easing.easeIn // 缓动函数
+        easing: Easing.elastic(0.9) // 缓动函数
       }).start()
     })
 
     this.state.animOpacity.map((item, index) => {
       Animated.timing(item, {
         toValue: 1, // 目标值
-        duration: 700, // 动画时间
+        duration: 900, // 动画时间
         delay: index * 100,
-        easing: Easing.easeIn // 缓动函数
+        easing: Easing.elastic(0.9) // 缓动函数
       }).start()
     })
   }
