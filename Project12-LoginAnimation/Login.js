@@ -28,21 +28,21 @@ export default class Login extends React.Component {
     Animated.timing(this.state.marginValue1, {
       toValue: 0, // 目标值
       duration: 800, // 动画时间
-      easing: Easing.inOut(Easing.ease) // 缓动函数
+      easing: Easing.easeOut // 缓动函数
     }).start()
 
     Animated.timing(this.state.marginValue2, {
       toValue: 0, // 目标值
       duration: 800, // 动画时间
       delay: 100,
-      easing: Easing.inOut(Easing.ease) // 缓动函数
+      easing: Easing.easeOut // 缓动函数
     }).start()
 
     Animated.timing(this.state.marginValue3, {
       toValue: 0, // 目标值
       duration: 800, // 动画时间
       delay: 200,
-      easing: Easing.inOut(Easing.ease) // 缓动函数
+      easing: Easing.easeOut // 缓动函数
     }).start()
   }
 
