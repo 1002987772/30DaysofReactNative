@@ -6,6 +6,7 @@ import React, {
 } from 'react-native'
 
 import autobind from 'autobind-decorator'
+import GoBack from '../GoBack'
 import LinearGradient from 'react-native-linear-gradient'
 
 export const title = '11 - ClearTableViewCell'
@@ -43,6 +44,7 @@ export default class ClearTableViewCell extends React.Component {
           dataSource={this.state.dataSource}
           renderRow={this._renderRow}
         />
+        <GoBack {...this.props}/>
       </View>
     )
   }
