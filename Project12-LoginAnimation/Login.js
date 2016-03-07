@@ -86,7 +86,7 @@ export default class Login extends React.Component {
   _onBttonAniamte () {
     Animated.spring(this.state.buttonSize, {
       toValue: 200, // 目标值
-      friction: 0.7 // Bouncier spring
+      friction: 2 // Bouncier spring
     }).start()
   }
 }
