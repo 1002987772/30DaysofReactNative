@@ -24,7 +24,8 @@ const projects = [
   require('./Project09-ImageScroller'),
   require('./Project10-VideoBackground'),
   require('./Project11-ClearTableViewCell'),
-  require('./Project12-LoginAnimation')
+  require('./Project12-LoginAnimation'),
+  require('./Project13-AnimateTableViewCell')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
