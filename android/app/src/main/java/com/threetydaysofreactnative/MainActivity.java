@@ -1,6 +1,7 @@
 package com.threetydaysofreactnative;
 
 import com.facebook.react.ReactActivity;
+import com.microsoft.codepush.react.CodePushReactPackage;
 import com.zmxv.RNSound.RNSoundPackage;
 import com.BV.LinearGradient.LinearGradientPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
@@ -40,6 +41,7 @@ public class MainActivity extends ReactActivity {
     protected List<ReactPackage> getPackages() {
         return Arrays.<ReactPackage>asList(
             new MainReactPackage(),
+        new CodePushReactPackage(),
         new RNSoundPackage(),
         new LinearGradientPackage(),
         new RCTCameraPackage(),

@@ -10,6 +10,7 @@
     "react-native": "^0.21.0",
     "react-native-blur": "^0.7.10",
     "react-native-camera": "git+https://github.com/lwansbrough/react-native-camera.git",
+    "react-native-code-push": "^1.7.3-beta",
     "react-native-linear-gradient": "^1.5.2",
     "react-native-sound": "^0.7.3",
     "react-native-swiper": "^1.4.3",
