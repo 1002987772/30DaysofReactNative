@@ -6,7 +6,7 @@ import React, {
   ListView,
   View,
   Text,
-  NavigatorIOS,
+  Navigator,
   TouchableHighlight
 } from 'react-native'
 
@@ -41,11 +41,20 @@ class ThreetyDaysofReactNative extends React.Component {
         <StatusBar
           barStyle='light-content'
         />
-        <NavigatorIOS
+        <Navigator
           style={styles.container}
+          renderScene={(route, navigator) => {
+            return <route.component navigator={navigator} {...route.passProps}/>
+          }}
           initialRoute={{
             title: '30DaysofReactNative',
             component: ProjectList
+          }}
+          configureScene={(router, routeStack) => {
+            if (router.SceneConfigs) {
+              return router.SceneConfigs
+            }
+            return Navigator.SceneConfigs.PushFromRight
           }}
           navigationBarHidden={true}
         />
@@ -115,8 +124,7 @@ const styles = StyleSheet.create({
     flex: 1
   },
   content: {
-    flex: 1,
-    marginTop: -15
+    flex: 1
   },
   list: {
     backgroundColor: '#eeeeee'
