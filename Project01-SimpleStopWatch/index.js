@@ -1,20 +1,19 @@
 import React, {
   StyleSheet,
-  Dimensions,
   TouchableHighlight,
+  TouchableOpacity,
   View,
   Text
 } from 'react-native'
 
 import GoBack from '../GoBack'
+import autobind from 'autobind-decorator'
 import Icon from 'react-native-vector-icons/Ionicons'
-
-const {width, height} = Dimensions.get('window')
-const vw = width / 100
-const vh = height / 100
 
 export const title = '01 - SimpleStopWatch'
 export const description = '一个简单的定时器'
+
+@autobind
 export default class SimpleStopWatch extends React.Component {
   constructor (props) {
     super(props)
@@ -38,22 +37,18 @@ export default class SimpleStopWatch extends React.Component {
             {this.state.count}
           </Text>
           <View style={styles.reset}>
-            <TouchableHighlight onPress={this._reset.bind(this)} underlayColor={'transparent'}>
+            <TouchableHighlight onPress={this._reset} underlayColor={'transparent'}>
               <Text style={styles.resetText}>Reset</Text>
             </TouchableHighlight>
           </View>
         </View>
         <View style={styles.control}>
-          <TouchableHighlight onPress={this._onStart.bind(this)} underlayColor={'transparent'}>
-            <View style={styles.left}>
-                <Icon size={60} name={'play'} color={'#ffffff'}/>
-            </View>
-          </TouchableHighlight>
-          <TouchableHighlight onPress={this._onPause.bind(this)} underlayColor={'transparent'}>
-            <View style={styles.right}>
-                <Icon size={60} name={'pause'} color={'#ffffff'}/>
-            </View>
-          </TouchableHighlight>
+            <TouchableOpacity style={styles.left} onPress={this._onStart} activeOpacity={0.8}>
+              <Icon size={60} name={'play'} color={'#ffffff'}/>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.right} onPress={this._onPause} activeOpacity={0.8}>
+              <Icon size={60} name={'pause'} color={'#ffffff'}/>
+            </TouchableOpacity>
         </View>
         <GoBack {...this.props}/>
       </View>
@@ -82,13 +77,10 @@ export default class SimpleStopWatch extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    position: 'relative'
+    flexDirection: 'column'
   },
   countWrap: {
-    width: width,
-    height: 40 * vh,
+    flex: 0.5,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#090123'
@@ -108,19 +100,17 @@ const styles = StyleSheet.create({
     fontSize: 80
   },
   control: {
-    flexDirection: 'row',
-    height: 60 * vh
+    flex: 0.5,
+    flexDirection: 'row'
   },
   left: {
-    width: 50 * vw,
-    height: 60 * vh,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#525BFC'
   },
   right: {
-    width: 50 * vw,
-    height: 60 * vh,
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#66BD09'
