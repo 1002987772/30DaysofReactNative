@@ -7,6 +7,7 @@ import React, {
 } from 'react-native'
 
 import GoBack from '../GoBack'
+import autobind from 'autobind-decorator'
 
 const {width} = Dimensions.get('window')
 
@@ -32,6 +33,8 @@ const text = `
 
 export const title = '02 - CustomFont'
 export const description = '自定义字体'
+
+@autobind
 export default class SimpleStopWatch extends React.Component {
   state = {
     currentIndex: 0,
@@ -47,7 +50,7 @@ export default class SimpleStopWatch extends React.Component {
           </Text>
         </View>
         <View style={styles.footer}>
-          <TouchableHighlight onPress={this._onChangeFont.bind(this)} underlayColor='transparent'>
+          <TouchableHighlight onPress={this._onChangeFont} underlayColor='transparent'>
             <View style={styles.footerBtn}>
                 <Text style={styles.btnText}>Change Font</Text>
             </View>
