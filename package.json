@@ -5,7 +5,10 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "codepush": "react-native bundle",
-    "fir": "fir build_ipa ./ios -o ./release -p -c 'this is changelog' -Q -T aa0252f3f9d84104465e525249ee729d"
+    "fir": "fir build_ipa ./ios -o ./release -p -c 'this is changelog' -Q -T aa0252f3f9d84104465e525249ee729d",
+    "ver:pre": "./scripts/version/pre.sh",
+    "ver": "./scripts/version/ios.sh",
+    "ver:post": "./scripts/version/post.sh"
   },
   "dependencies": {
     "autobind-decorator": "^1.3.3",
