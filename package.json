@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start"
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "codepush": "react-native bundle",
+    "fir": "fir build_ipa ./ios -o ./release -p -c 'this is changelog' -Q -T aa0252f3f9d84104465e525249ee729d"
   },
   "dependencies": {
     "autobind-decorator": "^1.3.3",

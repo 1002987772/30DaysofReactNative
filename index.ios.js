@@ -11,6 +11,7 @@ import React, {
 } from 'react-native'
 
 import autobind from 'autobind-decorator'
+import checkUpdate from './checkUpdate'
 
 const projects = [
   require('./Project01-SimpleStopWatch'),
@@ -30,6 +31,10 @@ const projects = [
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
+  componentDidMount () {
+    checkUpdate()
+  }
+
   render () {
     return (
       <View style={styles.container}>

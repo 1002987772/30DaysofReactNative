@@ -1,7 +1,7 @@
 import CodePush from 'react-native-code-push'
 import Loading from './Loading'
 
-export function checkUpdate () {
+export default function checkUpdate () {
   const options = {
     updateDialog: {
       appendReleaseDescription: true,
