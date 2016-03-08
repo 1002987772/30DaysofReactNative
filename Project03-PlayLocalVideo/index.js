@@ -3,6 +3,7 @@ import React, {
   View,
   Text,
   Image,
+  Navigator,
   ScrollView,
   ListView,
   Dimensions,
@@ -83,7 +84,8 @@ class VideoList extends React.Component {
       passProps: {
         video: rowData.video,
         navigator: this.props.navigator
-      }
+      },
+      SceneConfigs: Navigator.SceneConfigs.FloatFromBottom
     })
   }
 }
