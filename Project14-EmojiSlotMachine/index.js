@@ -46,19 +46,26 @@ export default class EmojiSlotMachine extends React.Component {
         <View style={styles.pickerContainer}>
           <PickerIOS
             style={styles.picker}
+            itemStyle={styles.emoji}
             onValueChange={(emoji) => this._onPickerChange(emoji, 'left')}>
             {this.dataArray1.map((item, index) => {
               const emoji = imageArray[item]
               return <PickerIOS.Item key={index} label={emoji} value={emoji} />
             })}
           </PickerIOS>
-          <Picker style={styles.picker} onValueChange={(emoji) => this._onPickerChange(emoji, 'middle')}>
+          <Picker
+            style={styles.picker}
+            itemStyle={styles.emoji}
+            onValueChange={(emoji) => this._onPickerChange(emoji, 'middle')}>
             {this.dataArray2.map((item, index) => {
               const emoji = imageArray[item]
               return <Picker.Item key={index} label={emoji} value={emoji} />
             })}
           </Picker>
-          <Picker style={styles.picker} onValueChange={(emoji) => this._onPickerChange(emoji, 'right')}>
+          <Picker
+            style={styles.picker}
+            itemStyle={styles.emoji}
+            onValueChange={(emoji) => this._onPickerChange(emoji, 'right')}>
             {this.dataArray3.map((item, index) => {
               const emoji = imageArray[item]
               return <Picker.Item key={index} label={emoji} value={emoji} />
@@ -97,15 +104,21 @@ export default class EmojiSlotMachine extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    justifyContent: 'center'
   },
   pickerContainer: {
+    flex: 1,
+    flexDirection: 'row',
     width,
     height: 80
   },
   picker: {
+    flex: 1,
     justifyContent: 'center'
+  },
+  emoji: {
+    fontSize: 60,
+    lineHeight: 100
   },
   buttonContainer: {
     position: 'absolute',
