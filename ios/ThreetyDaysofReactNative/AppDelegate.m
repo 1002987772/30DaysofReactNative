@@ -10,6 +10,7 @@
 #import "AppDelegate.h"
 
 #import "RCTRootView.h"
+#import "RCTSplashScreen.h"
 #import "CodePush.h"
 
 @implementation AppDelegate
@@ -48,6 +49,7 @@
                                                       moduleName:@"ThreetyDaysofReactNative"
                                                initialProperties:nil
                                                    launchOptions:launchOptions];
+  [RCTSplashScreen show:rootView];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];

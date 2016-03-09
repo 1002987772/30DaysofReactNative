@@ -120,6 +120,7 @@ android {
 }
 
 dependencies {
+    compile project(':@remobile/react-native-splashscreen')
     compile project(':react-native-code-push')
     compile project(':react-native-sound')
     compile project(':react-native-linear-gradient')

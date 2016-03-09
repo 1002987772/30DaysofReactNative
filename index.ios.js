@@ -12,6 +12,7 @@ import React, {
 
 import autobind from 'autobind-decorator'
 import checkUpdate from './checkUpdate'
+import SplashScreen from '@remobile/react-native-splashscreen'
 
 const projects = [
   require('./Project01-SimpleStopWatch'),
@@ -27,12 +28,14 @@ const projects = [
   require('./Project11-ClearTableViewCell'),
   require('./Project12-LoginAnimation'),
   require('./Project13-AnimateTableViewCell'),
-  require('./Project14-EmojiSlotMachine')
+  require('./Project14-EmojiSlotMachine'),
+  require('./Project15-AnimatedSplash')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
   componentDidMount () {
     checkUpdate()
+    SplashScreen.hide()
   }
 
   render () {
