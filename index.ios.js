@@ -31,7 +31,8 @@ const projects = [
   require('./Project14-EmojiSlotMachine'),
   require('./Project15-AnimatedSplash'),
   require('./Project16-SlideMenu'),
-  require('./Project17-TumblrMenu')
+  require('./Project17-TumblrMenu'),
+  require('./Project18-LimitCharacters')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
