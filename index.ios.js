@@ -29,7 +29,8 @@ const projects = [
   require('./Project12-LoginAnimation'),
   require('./Project13-AnimateTableViewCell'),
   require('./Project14-EmojiSlotMachine'),
-  require('./Project15-AnimatedSplash')
+  require('./Project15-AnimatedSplash'),
+  require('./Project16-SlideMenu')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
@@ -46,12 +47,9 @@ class ThreetyDaysofReactNative extends React.Component {
         />
         <Navigator
           style={styles.container}
+          initialRoute={{title: '30DaysofReactNative', component: ProjectList}}
           renderScene={(route, navigator) => {
             return <route.component navigator={navigator} {...route.passProps}/>
-          }}
-          initialRoute={{
-            title: '30DaysofReactNative',
-            component: ProjectList
           }}
           configureScene={(router, routeStack) => {
             if (router.SceneConfigs) {
@@ -59,7 +57,6 @@ class ThreetyDaysofReactNative extends React.Component {
             }
             return Navigator.SceneConfigs.PushFromRight
           }}
-          navigationBarHidden={true}
         />
       </View>
     )
