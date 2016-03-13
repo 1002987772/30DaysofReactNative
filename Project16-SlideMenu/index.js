@@ -100,7 +100,7 @@ export default class SlideMenu extends React.Component {
     super(props)
     this.state = {
       currentTitle: menuItems[0],
-      dataSource: ds.cloneWithRows(tableData)
+      dataSource: ds.cloneWithRows(tableData.concat(...tableData))
     }
     this.isMenuUp = true
   }
@@ -157,8 +157,10 @@ export default class SlideMenu extends React.Component {
   _renderRow (rowData, sectionID, rowID) {
     return (
       <Image style={styles.itemContainer} key={rowID} source={rowData.bg} >
-        <View style={styles.user}>
-          <Text>{rowData.title}</Text>
+        <View style={styles.itemUser}>
+          <Image style={styles.itemAvatar} source={rowData.avatar}/>
+          <Text style={styles.itemTitle}>{rowData.title}</Text>
+          <Text style={styles.itemAuthor}>{rowData.author}</Text>
         </View>
       </Image>
     )
@@ -182,12 +184,37 @@ const styles = StyleSheet.create({
   },
   itemContainer: {
     flex: 1,
+    position: 'relative',
     resizeMode: 'cover',
     width, // 一定加上width，不然image resizemode 会有问题
-    height: 250
+    height: 250,
+    overflow: 'hidden'
   },
-  user: {
+  itemUser: {
+    position: 'absolute',
+    bottom: 20,
+    left: 20,
     marginTop: 20
+  },
+  itemAvatar: {
+    width: 50,
+    height: 50,
+    overflow: 'hidden',
+    borderRadius: 25
+  },
+  itemTitle: {
+    position: 'absolute',
+    bottom: 24,
+    left: 60,
+    fontSize: 16,
+    color: 'white'
+  },
+  itemAuthor: {
+    position: 'absolute',
+    bottom: 4,
+    left: 60,
+    fontSize: 14,
+    color: '#999999'
   },
   navBar: {
     backgroundColor: 'rgba(0,0,0,0.9)'
