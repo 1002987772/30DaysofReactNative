@@ -4,7 +4,8 @@ import React, {
   View,
   Text,
   Image,
-  Dimensions
+  Dimensions,
+  TouchableOpacity
 } from 'react-native'
 
 import autobind from 'autobind-decorator'
@@ -14,11 +15,52 @@ import Animatable from 'react-native-animatable'
 import Icon from 'react-native-vector-icons/Ionicons'
 import Tabs from 'react-native-tabs'
 
-const {width} = Dimensions.get('window')
+const {width, height} = Dimensions.get('window')
+const vw = width / 100
+const vh = height / 100
 
 const listData = [
   {avatar: require('./images/718835727.png'), name: 'Hugo', pic: require('./images/1-hjGpOnCIu4sP7H4V2sdFcA.png')},
   {avatar: require('./images/89w7SbqD_400x400.png'), name: 'MengTo', pic: require('./images/22266727550_5decf72626_o.jpg')}
+]
+
+const menuData = [
+  {
+    ref: 'text', text: 'Text',
+    icon: require('./images/Text.png'),
+    out: {left: -60, top: 80, opacity: 0},
+    in: {left: 50 * vw - 120, top: 80, opacity: 1}
+  },
+  {
+    ref: 'photo', text: 'Photo',
+    icon: require('./images/Photo.png'),
+    out: {right: -60, top: 80, opacity: 0},
+    in: {right: 50 * vw - 120, top: 80, opacity: 1}
+  },
+  {
+    ref: 'quote', text: 'Quote',
+    icon: require('./images/Quote.png'),
+    out: {left: -20, top: 240, opacity: 0},
+    in: {left: 50 * vw - 120, top: 240, opacity: 1}
+  },
+  {
+    ref: 'link', text: 'Link',
+    icon: require('./images/Link.png'),
+    out: {right: -20, top: 240, opacity: 0},
+    in: {right: 50 * vw - 120, top: 240, opacity: 1}
+  },
+  {
+    ref: 'chat', text: 'Chat',
+    icon: require('./images/Chat.png'),
+    out: {left: 20, top: 400, opacity: 0},
+    in: {left: 50 * vw - 120, top: 400, opacity: 1}
+  },
+  {
+    ref: 'audio', text: 'Audio',
+    icon: require('./images/Audio.png'),
+    out: {right: 20, top: 400, opacity: 0},
+    in: {right: 50 * vw - 120, top: 400, opacity: 1}
+  }
 ]
 
 export const title = '17 - TumblrMenu'
@@ -30,7 +72,8 @@ export default class TumblrMenu extends React.Component {
     super()
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
     this.state = {
-      dataSource: ds.cloneWithRows(listData)
+      dataSource: ds.cloneWithRows(listData),
+      isShow: false
     }
   }
 
@@ -49,20 +92,26 @@ export default class TumblrMenu extends React.Component {
           style={{backgroundColor: 'darkslateblue'}}>
           <Icon name='ios-home' style={styles.tab}/>
           <Icon name='ios-search-strong' style={styles.tab}/>
-          <View style={styles.tabEditContainer} onSelect={this._onPress}>
+          <View style={styles.tabEditContainer} onSelect={this._toggleMenu}>
             <Icon name='edit' style={[styles.tab, styles.tabEdit]}/>
           </View>
           <Icon name='chatbubble-working' style={styles.tab}/>
           <Icon name='person' style={styles.tab}/>
         </Tabs>
 
-        <BlurView blurType='dark' style={styles.mark}>
-          <Animatable.View ref={'text'}><Text>Text</Text></Animatable.View>
-          <Animatable.View ref={'photo'}><Text>Photo</Text></Animatable.View>
-          <Animatable.View ref={'quote'}><Text>Quote</Text></Animatable.View>
-          <Animatable.View ref={'link'}><Text>Link</Text></Animatable.View>
-          <Animatable.View ref={'chat'}><Text>Chat</Text></Animatable.View>
-          <Animatable.View ref={'audio'}><Text>Audio</Text></Animatable.View>
+        <BlurView blurType='dark'
+          style={[styles.mark, {left: this.state.isShow ? 0 : -1000}]}>
+          {menuData.map((item, index) => {
+            return (
+              <Animatable.View ref={item.ref} key={index} style={[styles.menuItem, item.out]}>
+                <Animatable.Image source={item.icon}/>
+                <Animatable.Text style={styles.menuText}>{item.text}</Animatable.Text>
+              </Animatable.View>
+            )
+          })}
+          <TouchableOpacity style={styles.menuButton} onPress={this._toggleMenu}>
+            <Text style={styles.menuButtonText}>Nevermind</Text>
+          </TouchableOpacity>
         </BlurView>
         <GoBack {...this.props}/>
       </View>
@@ -83,8 +132,22 @@ export default class TumblrMenu extends React.Component {
     )
   }
 
-  _onPress () {
-    console.log('true')
+  _toggleMenu () {
+    if (this.state.isShow) {
+      setTimeout(() => {
+        this.setState({isShow: false})
+      }, 200)
+
+      menuData.map(item => {
+        this.refs[item.ref].transitionTo(item.out)
+      })
+    } else {
+      this.setState({isShow: true})
+
+      menuData.map(item => {
+        this.refs[item.ref].transitionTo(item.in)
+      })
+    }
   }
 }
 
@@ -138,6 +201,26 @@ const styles = StyleSheet.create({
   mark: {
     position: 'absolute',
     top: 0,
-    left: -1000
+    left: 0,
+    width, height,
+    justifyContent: 'center'
+  },
+  menuItem: {
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  menuText: {
+    color: 'white'
+  },
+  menuButton: {
+    marginTop: 80 * vh,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  menuButtonText: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: '#ffffff'
   }
 })
