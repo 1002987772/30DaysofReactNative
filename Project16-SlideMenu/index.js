@@ -6,13 +6,13 @@ import React, {
   Text,
   Image,
   Dimensions,
-  TouchableHighlight,
   TouchableOpacity
 } from 'react-native'
 
+import Animatable from 'react-native-animatable'
 import autobind from 'autobind-decorator'
 
-const { width, height } = Dimensions.get('window')
+const { width } = Dimensions.get('window')
 
 const tableData = [
   {
@@ -40,6 +40,20 @@ const tableData = [
     author: 'Noby-Wan Kenobi'
   }
 ]
+const menuItems = [
+  'Everyday Moments', 'Popular', 'Editors', 'Upcoming',
+  'Fresh', 'Stock-photos', 'Trending'
+]
+const menuUpState = {
+  height: 15, // 如果设置小于15，在收缩的时候会有抖动，不清楚原因
+  opacity: 0,
+  marginTop: -40
+}
+const menuDownState = {
+  height: 400,
+  opacity: 1,
+  marginTop: 0
+}
 
 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 const NavigationBarRouteMapper = {
@@ -56,15 +70,15 @@ const NavigationBarRouteMapper = {
   },
 
   Title (route, navigator, index, navState) {
+    console.log(route.title)
     return (
       <Text style={[styles.navBarText, styles.navBarTitleText]}>
-        {route.title}
+        {navigator.props.initialRoute.title}
       </Text>
     )
   },
 
   RightButton (route, navigator, index, navState) {
-    console.log(this)
     return (
       <TouchableOpacity
         onPress={this._onToggleSlideMenu}
@@ -85,18 +99,39 @@ export default class SlideMenu extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      currentTitle: menuItems[0],
       dataSource: ds.cloneWithRows(tableData)
     }
+    this.isMenuUp = true
   }
 
   render () {
     return (
       <View style={styles.container}>
+        <Animatable.View
+          ref='menuView'
+          style={styles.menuContainer}>
+          {menuItems.map((item, index) => {
+            return (
+              <TouchableOpacity key={index}
+                onPress={() => {
+                  this._onToggleSlideMenu(index)
+                  if (this.state.currentTitle !== item) {
+                    this.setState({currentTitle: item})
+                  }
+                }}>
+                <Animatable.Text style={[styles.itemMenuText, this.state.currentTitle === item ? styles.itemMenuDefaultText : null]}>
+                  {item}
+                </Animatable.Text>
+              </TouchableOpacity>
+            )
+          })}
+        </Animatable.View>
         <Navigator
           debugOverlay={false}
           style={styles.appContainer}
           initialRoute={{
-            title: 'Everyday Moments'
+            title: this.state.currentTitle
           }}
           renderScene={(route, navigator) => (
             <ListView
@@ -130,7 +165,13 @@ export default class SlideMenu extends React.Component {
   }
 
   _onToggleSlideMenu () {
-    
+    if (this.isMenuUp) {
+      this.refs.menuView.transitionTo(menuDownState)
+      this.isMenuUp = false
+    } else {
+      this.refs.menuView.transitionTo(menuUpState)
+      this.isMenuUp = true
+    }
   }
 }
 
@@ -174,5 +215,19 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 20,
     backgroundColor: '#EAEAEA'
+  },
+  menuContainer: Object.assign({
+    backgroundColor: '#333333',
+    paddingHorizontal: 15,
+    paddingTop: 40
+  }, menuUpState),
+  itemMenuText: {
+    fontSize: 20,
+    fontFamily: 'Avenir Next',
+    lineHeight: 36,
+    color: '#666666'
+  },
+  itemMenuDefaultText: {
+    color: 'white'
   }
 })
