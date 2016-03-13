@@ -104,8 +104,8 @@ export default class TumblrMenu extends React.Component {
           {menuData.map((item, index) => {
             return (
               <Animatable.View ref={item.ref} key={index} style={[styles.menuItem, item.out]}>
-                <Animatable.Image source={item.icon}/>
-                <Animatable.Text style={styles.menuText}>{item.text}</Animatable.Text>
+                <Image source={item.icon}/>
+                <Text style={styles.menuText}>{item.text}</Text>
               </Animatable.View>
             )
           })}
