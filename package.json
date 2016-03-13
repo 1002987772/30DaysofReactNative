@@ -21,6 +21,7 @@
     "react-native-linear-gradient": "^1.5.2",
     "react-native-sound": "^0.7.3",
     "react-native-swiper": "^1.4.3",
+    "react-native-tabs": "^1.0.5",
     "react-native-vector-icons": "^1.2.1",
     "react-native-video": "^0.7.1",
     "react-native-viewport-units": "0.0.5"

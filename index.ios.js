@@ -30,7 +30,8 @@ const projects = [
   require('./Project13-AnimateTableViewCell'),
   require('./Project14-EmojiSlotMachine'),
   require('./Project15-AnimatedSplash'),
-  require('./Project16-SlideMenu')
+  require('./Project16-SlideMenu'),
+  require('./Project17-TumblrMenu')
 ]
 
 class ThreetyDaysofReactNative extends React.Component {
