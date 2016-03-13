@@ -33,9 +33,12 @@ const tableData = [
 
 @autobind
 export default class ClearTableViewCell extends React.Component {
-  state = {
-    dataSource: ds.cloneWithRows(tableData)
-  };
+  constructor () {
+    super()
+    this.state = {
+      dataSource: ds.cloneWithRows(tableData)
+    }
+  }
 
   render () {
     return (

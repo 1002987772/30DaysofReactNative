@@ -35,11 +35,14 @@ const tableData = [
 
 @autobind
 export default class AnimateTableViewCell extends React.Component {
-  state = {
-    dataSource: ds.cloneWithRows(tableData),
-    animTransiton: [],
-    animOpacity: []
-  };
+  constructor () {
+    super()
+    this.state = {
+      dataSource: ds.cloneWithRows(tableData),
+      animTransiton: [],
+      animOpacity: []
+    }
+  }
 
   componentWillMount () {
     let animTransiton = []

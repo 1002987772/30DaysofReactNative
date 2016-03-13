@@ -18,11 +18,10 @@ export default class SimpleStopWatch extends React.Component {
   constructor (props) {
     super(props)
     this.timerID = null
+    this.state = {
+      count: '0.0'
+    }
   }
-
-  state = {
-    count: '0.0'
-  };
 
   componentWillUnmount () {
     this._onPause()

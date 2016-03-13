@@ -17,12 +17,15 @@ const vw = width / 100
 
 @autobind
 export default class Login extends React.Component {
-  state = {
-    marginValue1: new Animated.Value(-1000),
-    marginValue2: new Animated.Value(-1000),
-    marginValue3: new Animated.Value(-1000),
-    buttonSize: new Animated.Value(150)
-  };
+  constructor () {
+    super()
+    this.state = {
+      marginValue1: new Animated.Value(-1000),
+      marginValue2: new Animated.Value(-1000),
+      marginValue3: new Animated.Value(-1000),
+      buttonSize: new Animated.Value(150)
+    }
+  }
 
   componentDidMount () {
     Animated.timing(this.state.marginValue1, {

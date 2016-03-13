@@ -20,9 +20,12 @@ export const description = '我的地理位置'
 
 @autobind
 export default class FindMyLocation extends React.Component {
-  state = {
-    myLocation: 'My Location'
-  };
+  constructor () {
+    super()
+    this.state = {
+      myLocation: 'My Location'
+    }
+  }
 
   render () {
     return (

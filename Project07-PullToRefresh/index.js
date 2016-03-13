@@ -18,13 +18,16 @@ export const description = '下拉刷新'
 
 @autobind
 export default class PullToRefresh extends React.Component {
-  state = {
-    isRefreshing: false,
-    loaded: 0,
-    rowData: favoriteEmoji.map(
-      (val, i) => ({emoji: val})
-    )
-  };
+  constructor () {
+    super()
+    this.state = {
+      isRefreshing: false,
+      loaded: 0,
+      rowData: favoriteEmoji.map(
+        (val, i) => ({emoji: val})
+      )
+    }
+  }
 
   render () {
     const rows = this.state.rowData.map((row, i) => {

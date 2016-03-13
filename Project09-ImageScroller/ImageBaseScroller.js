@@ -9,11 +9,6 @@ import autobind from 'autobind-decorator'
 
 @autobind
 export default class ImageBaseScroller extends React.Component {
-  state = {
-    minimumZoomScale: null,
-    maximumZoomScale: null
-  };
-
   componentWillMount () {
     const widthScale = this.props.size.width / this.props.width
     const heightScale = this.props.size.height / this.props.height

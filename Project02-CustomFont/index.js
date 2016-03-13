@@ -36,10 +36,13 @@ export const description = '自定义字体'
 
 @autobind
 export default class SimpleStopWatch extends React.Component {
-  state = {
-    currentIndex: 0,
-    currentFontFamily: fontNames[0]
-  };
+  constructor () {
+    super()
+    this.state = {
+      currentIndex: 0,
+      currentFontFamily: fontNames[0]
+    }
+  }
 
   render () {
     return (

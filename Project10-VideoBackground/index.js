@@ -19,18 +19,21 @@ export const description = '背景视频'
 
 @autobind
 export default class VideoBackground extends React.Component {
-  state = {
-    video: './moments',
-    rate: 1,
-    volume: 1,
-    muted: false,
-    resizeMode: 'contain',
-    duration: 0.0,
-    currentTime: 0.0,
-    paused: false,
-    controls: true,
-    skin: 'native'
-  };
+  constructor () {
+    super()
+    this.state = {
+      video: './moments',
+      rate: 1,
+      volume: 1,
+      muted: false,
+      resizeMode: 'contain',
+      duration: 0.0,
+      currentTime: 0.0,
+      paused: false,
+      controls: true,
+      skin: 'native'
+    }
+  }
 
   render () {
     return (

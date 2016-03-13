@@ -15,17 +15,20 @@ export const description = '音乐随机背景渐变'
 
 @autobind
 export default class RandomGradientColorMusic extends React.Component {
-  state = {
-    musicUrl: './Ecstasy.mp3',
-    bgColor: this._randomColor(),
-    colors: [
-      'rgba(125, 125, 125, 0.2)',
-      'rgba(255, 0, 0, 0.2)',
-      'rgba(0, 255, 0, 0.2)',
-      'rgba(0, 0, 255, 0.2)',
-      'rgba(110, 110, 110, 0.2)'
-    ]
-  };
+  constructor () {
+    super()
+    this.state = {
+      musicUrl: './Ecstasy.mp3',
+      bgColor: this._randomColor(),
+      colors: [
+        'rgba(125, 125, 125, 0.2)',
+        'rgba(255, 0, 0, 0.2)',
+        'rgba(0, 255, 0, 0.2)',
+        'rgba(0, 0, 255, 0.2)',
+        'rgba(110, 110, 110, 0.2)'
+      ]
+    }
+  }
 
   componentWillUnmount () {
     this._stop()

@@ -12,17 +12,20 @@ import GoBack from '../GoBack'
 
 @autobind
 export default class VideoPlay extends React.Component {
-  state = {
-    rate: 1,
-    volume: 1,
-    muted: false,
-    resizeMode: 'contain',
-    duration: 0.0,
-    currentTime: 0.0,
-    paused: false,
-    controls: true,
-    skin: 'native'
-  };
+  constructor () {
+    super()
+    this.state = {
+      rate: 1,
+      volume: 1,
+      muted: false,
+      resizeMode: 'contain',
+      duration: 0.0,
+      currentTime: 0.0,
+      paused: false,
+      controls: true,
+      skin: 'native'
+    }
+  }
 
   render () {
     return (

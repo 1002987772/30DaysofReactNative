@@ -29,9 +29,12 @@ const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2})
 
 @autobind
 export default class CarouselEffect extends React.Component {
-  state = {
-    dataSource: ds.cloneWithRows(imageList)
-  };
+  constructor () {
+    super()
+    this.state = {
+      dataSource: ds.cloneWithRows(imageList)
+    }
+  }
 
   render () {
     return (
